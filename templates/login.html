@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Set to column for footer positioning */
+            height: 100vh; /* Full height of the viewport */
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: auto; /* Centering the container */
+            flex: 1; /* Allow the container to grow */
+            display: flex;
+            flex-direction: column; /* Ensure form items stack vertically */
+            justify-content: center; /* Center the content vertically */
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-container label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .login-container .signup-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .login-container .signup-link a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0; /* Padding for top and bottom of footer */
+            background-color: #fff;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Shadow for a slight elevation */
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1>Welcome to the Payroll System</h1>
+        <nav>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('about_us') }}">About Us</a>
+        </nav>
+    </header>
+    <div class="login-container">
+        <h2>Login</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <p class="signup-link">Don't have an account? <a href="{{ url_for('register') }}">Register here</a>.</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 Payroll System</p>
+    </footer>
+</body>
+</html>

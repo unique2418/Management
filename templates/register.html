@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Set to column for footer positioning */
+            height: 100vh; /* Full height of the viewport */
+        }
+
+        .registration-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: auto; /* Centering the container */
+            flex: 1; /* Allow the container to grow */
+            display: flex;
+            flex-direction: column; /* Ensure form items stack vertically */
+            justify-content: center; /* Center the content vertically */
+        }
+
+        .registration-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .registration-container input[type="text"],
+        .registration-container input[type="email"],
+        .registration-container input[type="password"],
+        .registration-container select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .registration-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .registration-container button:hover {
+            background-color: #45a049;
+        }
+
+        .registration-container .login-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .registration-container .login-link a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0; /* Padding for top and bottom of footer */
+            background-color: #fff;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Shadow for a slight elevation */
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1>Welcome to the Payroll System</h1>
+        <nav>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('about_us') }}">About Us</a>
+        </nav>
+    </header>
+    <div class="registration-container">
+        <h1>Create an Account</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form method="POST">
+            <input type="text" name="employee_id" placeholder="Employee ID" required>
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <select name="role" required>
+                <option value="employee">Employee</option>
+                <option value="manager">Manager</option>
+            </select>
+            <button type="submit">Register</button>
+        </form>
+        <p class="login-link">Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 Payroll System</p>
+    </footer>
+</body>
+</html>

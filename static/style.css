@@ -1,0 +1,195 @@
+/*!* static/style.css *!*/
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    background-color: #f4f4f4;*/
+/*}*/
+
+/*header {*/
+/*    background: #35424a;*/
+/*    color: #ffffff;*/
+/*    padding: 10px 0;*/
+/*    text-align: center;*/
+/*}*/
+
+/*h1, h2, h3 {*/
+/*    margin: 0;*/
+/*}*/
+
+/*nav {*/
+/*    margin: 20px 0;*/
+/*}*/
+
+/*nav a {*/
+/*    color: #ffffff;*/
+/*    margin: 0 15px;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*nav a:hover {*/
+/*    text-decoration: underline;*/
+/*}*/
+
+/*.container {*/
+/*    width: 80%;*/
+/*    margin: auto;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*footer {*/
+/*    text-align: center;*/
+/*    padding: 10px 0;*/
+/*    background: #35424a;*/
+/*    color: #ffffff;*/
+/*    position: relative;*/
+/*    bottom: 0;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.alert {*/
+/*    padding: 10px;*/
+/*    margin-bottom: 15px;*/
+/*    border: 1px solid transparent;*/
+/*    border-radius: 4px;*/
+/*}*/
+
+/*.alert-success {*/
+/*    background-color: #dff0d8;*/
+/*    border-color: #d6e9c6;*/
+/*    color: #3c763d;*/
+/*}*/
+
+/*.alert-danger {*/
+/*    background-color: #f2dede;*/
+/*    border-color: #ebccd1;*/
+/*    color: #a94442;*/
+/*}*/
+
+/*.alert-warning {*/
+/*    background-color: #fcf8e3;*/
+/*    border-color: #faebcc;*/
+/*    color: #8a6d3b;*/
+/*}*/
+
+
+/* static/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background: url('https://source.unsplash.com/1600x400/?business') no-repeat center center/cover;
+    color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.cta-button:hover {
+    background-color: #4cae4c;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.features h2 {
+    text-align: center;
+    width: 100%;
+}
+
+.feature {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.feature h3 {
+    margin-top: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Add this to your static/style.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #35424a;
+    color: white;
+}

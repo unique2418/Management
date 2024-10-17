@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About Us</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #67B7D1;
+            color: #f4f4f4;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .team-member {
+            width: 30%;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .team-member h3 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+        .team-member p {
+            font-size: 14px;
+            color: #777;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #67B7D1;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1>Welcome to the Payroll System</h1>
+        <nav>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('about_us') }}">About Us</a>
+        </nav>
+    </header>
+    <div class="header">
+        <h2>About Us</h2>
+    </div>
+    
+    <div class="container">
+        <h1>Team 6: Gentleman</h1>
+        <p>
+            We are a dedicated team of students, passionate about solving real-world problems 
+            through innovation and collaboration. Each of us brings unique skills from different areas of study, 
+            allowing us to approach challenges from diverse perspectives.
+            Together, we are committed to pushing boundaries, learning, and growing as we work toward a common goal.
+        </p>
+        <h2 style="text-align:center">Our Team</h2>
+        <div class="team">
+            <div class="team-member">
+                <h3>Ninad Khune</h3>
+                <p>Technical Lead</p>
+            </div>
+            <div class="team-member">
+                <h3>Khushal Pareta</h3>
+                <p>Communication Lead</p>
+            </div>
+            <br>
+            <div class="team-member">
+                <h3>Mihir Jawale</h3>
+                <p>Member</p>
+            </div>
+            <div class="team-member">
+                <h3>Neelanjan Dalavi</h3>
+                <p>Member</p>
+            </div>
+            <div class="team-member">
+                <h3>Krishna Wankhade</h3>
+                <p>Member</p>
+            </div>
+            <div class="team-member">
+                <h3>Ninad Badekar</h3>
+                <p>Member</p>
+            </div>
+        </div>
+    </div>
+
+   <footer>
+        <p>&copy; 2024 Payroll System</p>
+    </footer>
+</body>
+</html>

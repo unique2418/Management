@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Manager Dashboard</h1>
+        <nav>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Welcome, {{ user[1] }}!</h2>
+        <h3>Your Employee Details</h3>
+        <p>Employee ID: {{ user[0] }}</p>
+        <p>Email: {{ user[2] }}</p>
+        <p>Working Days: {{ user[3] }}</p> <!-- Display working days for the manager -->
+
+        <h3>Update Employee Working Days</h3>
+        <form action="{{ url_for('update_working_days') }}" method="POST">
+            <label for="employee_id">Select Employee:</label>
+            <select name="employee_id" required>
+                {% for employee in employees %}
+                    <option value="{{ employee[0] }}">{{ employee[1] }}</option>
+                {% endfor %}
+            </select>
+            <label for="working_days">Working Days:</label>
+            <input type="number" name="working_days" required min="0">
+            <button type="submit">Update Working Days</button>
+        </form>
+
+        <h3>Employee Working Days</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Full Name</th>
+                    <th>Working Days</th>
+                                        <th>Roles</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employees %}
+                <tr>
+                    <td>{{ employee[0] }}</td>
+                    <td>{{ employee[1] }}</td>
+                    <td>{{ employee[2] }}</td>
+                    <td>{{ employee[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        <p>&copy; 2024 Payroll System</p>
+    </footer>
+</body>
+</html>
