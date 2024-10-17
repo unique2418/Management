@@ -5,7 +5,9 @@ from flask import Flask, render_template, request, redirect, session, flash, url
 from flask_mysqldb import MySQL
 from flask_bcrypt import Bcrypt
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='.')
+app = Flask(__name__, static_folder='.')
+
 app.secret_key = 'your_secret_key'
 
 # MySQL Config
